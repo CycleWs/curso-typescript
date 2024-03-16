@@ -35,7 +35,7 @@
 </div>
 <img width=100% height=100% src="./ilustrative-images/landpageTS.png" alt="Project logo">
 
-## 🌐💻 Saiba mais sobre a Typescript <a name = "built_using"></a>
+## 🌐💻 Saiba mais sobre Typescript <a name = "built_using"></a>
 
 - [Typescript](https://www.typescriptlang.org) - Linguagem de programação utilizada
 
