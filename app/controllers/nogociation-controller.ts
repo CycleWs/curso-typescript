@@ -6,7 +6,7 @@ export class NegociationController{
     private inputDate:  HTMLInputElement;
     private inputQuantity: HTMLInputElement;
     private inputValue: HTMLInputElement;
-    private negociations =  new Negociations;
+    private negociations =  new Negociations();
     private negociationsView = new NegocationsView('#negociationsView');
     
 
@@ -14,7 +14,7 @@ export class NegociationController{
         this.inputDate = document.querySelector("#data");
         this.inputQuantity = document.querySelector("#quantidade");
         this.inputValue = document.querySelector("#valor");
-        this.negociationsView.update();
+        this.negociationsView.update(this.negociations);
 
     }
 
@@ -22,7 +22,7 @@ export class NegociationController{
     addNC(): void{
         const negociation = this.createNegociation();
         this.negociations.addNs(negociation);
-        console.log(this.negociations.list());
+        this.negociationsView.update(this.negociations);
         this.cleanForms()
     }
 
