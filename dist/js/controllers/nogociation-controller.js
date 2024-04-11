@@ -1,10 +1,13 @@
+import { weekDays } from "../enums/weekDays.js";
 import { Negociation } from "../models/negociation.js";
 import { Negociations } from "../models/negociations.js";
+import { MessageView } from "../views/message-view.js";
 import { NegocationsView } from "../views/negocations-view.js";
 export class NegociationController {
     constructor() {
         this.negociations = new Negociations();
         this.negociationsView = new NegocationsView('#negociationsView');
+        this.MessageView = new MessageView('#messageView');
         this.inputDate = document.querySelector("#data");
         this.inputQuantity = document.querySelector("#quantidade");
         this.inputValue = document.querySelector("#valor");
@@ -13,9 +16,17 @@ export class NegociationController {
     //Função utilizada para adcionar a negociação dentro da array criada na outra classa (será utilizada no botão do HTML)
     addNC() {
         const negociation = this.createNegociation();
+        if (!this.isBusinessDay(negociation.data)) {
+            this.MessageView.update("Apenas negociações em dias úteis são aceitas");
+            return;
+        }
         this.negociations.addNs(negociation);
-        this.negociationsView.update(this.negociations);
         this.cleanForms();
+        this.updateView();
+    }
+    isBusinessDay(date) {
+        return date.getDay() < weekDays.SABADO &&
+            date.getDay() > weekDays.DOMINGO;
     }
     //Função utilizada para criação da negociação do tipo Negociation!
     createNegociation() {
@@ -30,5 +41,9 @@ export class NegociationController {
         this.inputQuantity.value = '';
         this.inputValue.value = '';
         this.inputDate.focus();
+    }
+    updateView() {
+        this.negociationsView.update(this.negociations);
+        this.MessageView.update("Negociação adicionada com sucesso");
     }
 }
