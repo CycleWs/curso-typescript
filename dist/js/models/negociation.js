@@ -11,4 +11,11 @@ export class Negociation {
         const data = new Date(this._data.getTime());
         return data;
     }
+    static createBy(dateString, quantityString, valueString) {
+        const exp = /-/g;
+        const data = new Date(dateString.replace(exp, ','));
+        const quantidade = parseInt(quantityString);
+        const valor = parseFloat(valueString);
+        return new Negociation(data, quantidade, valor);
+    }
 }
