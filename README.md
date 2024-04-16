@@ -6,6 +6,10 @@
 <h3 align="center">alurabank</h3>
 
 <div align="center">
+<div align="center">
+  <a href="/READMEeng/README.md" rel="noopener">
+ <img src="https://img.shields.io/badge/README-%20English-blue" alt="Readme in Portuguese"></a>
+</div>
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/cyclews/curso-typescript.svg)](https://github.com/cyclews/curso-typescript/issues)
@@ -35,6 +39,24 @@
 </div>
 <img width=100% height=100% src="./ilustrative-images/landpageTS.png" alt="Project logo">
 
+## 
+<div align="center">
+  <p>
+  ao adcionar uma negociação em um dia válido, ele irá criar um template embaixo com as informações da negociação e irá ter um aviso de que foi adcionado!  
+  </p>  
+</div>
+<img width=100% height=100% src="./ilustrative-images/NegociationAdd.png" alt="Project Added">
+
+##
+
+<div align="center">
+  <p>
+  Caso tente adcionar uma negociação em um dia inválido (dias não uteis), não será criado o template e um erro aparecerá no topo dando um aviso
+  </p>
+</div>
+<img width=100% height= 100% src="./ilustrative-images/NegociationERROR.png">
+
+##
 ## 🌐💻 Saiba mais sobre Typescript <a name = "built_using"></a>
 
 - [Typescript](https://www.typescriptlang.org) - Linguagem de programação utilizada

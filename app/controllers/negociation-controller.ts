@@ -9,13 +9,13 @@ export class NegociationController{
     private inputQuantity: HTMLInputElement;
     private inputValue: HTMLInputElement;
     private negociations =  new Negociations();
-    private negociationsView = new NegocationsView('#negociationsView');
+    private negociationsView = new NegocationsView('#negociationsView',true);
     private MessageView = new MessageView('#messageView');
 
     constructor(){
-        this.inputDate = document.querySelector("#data");
-        this.inputQuantity = document.querySelector("#quantidade");
-        this.inputValue = document.querySelector("#valor");
+        this.inputDate = <HTMLInputElement> document.querySelector("#data");
+        this.inputQuantity = <HTMLInputElement> document.querySelector("#quantidade");
+        this.inputValue = document.querySelector("#valor") as HTMLInputElement; //AMBAS AS FORMAS DE CASTAR PARA DIZER QUE É DO TIPO HTMLInputElement estão corretas (linhaas 16, 17 e 18)
         this.negociationsView.update(this.negociations);
 
     }
